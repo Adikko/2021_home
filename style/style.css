@@ -1,0 +1,20 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+.background {
+  height: 100%;
+  width: 100vw;
+  background-color: black;
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.background__canvas {
+  height: 100%;
+  width: 100vw;
+}
+/*# sourceMappingURL=style.css.map */
