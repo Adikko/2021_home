@@ -9,6 +9,7 @@
     background-color: black;
     position: absolute;
     display: flex;
+    z-index: -999;
 }
 
 .background__canvas {

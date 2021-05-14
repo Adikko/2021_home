@@ -11,6 +11,7 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  z-index: -999;
 }
 
 .background__canvas {
