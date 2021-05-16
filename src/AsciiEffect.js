@@ -15,7 +15,7 @@
 
         // Some ASCII settings
 
-        const bResolution = !options['resolution'] ? 0.20 : options['resolution'];
+        const bResolution = !options['resolution'] ? 0.30 : options['resolution'];
         // Higher for more details
         const iScale = !options['scale'] ? 1 : options['scale'];
         const bColor = !options['color'] ? false : options['color'];

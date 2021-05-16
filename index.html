@@ -3,23 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport"
+        content="width=device-width,
+        user-scalable=no,
+        initial-scale=1.0,
+        maximum-scale=1.0,
+        minimum-scale=1.0">
     <link rel="stylesheet" href="./style/style.css">
     <title>kulik.adrian</title>
 </head>
 <body>
-    
-    <nav class="navigation">
-    </nav>
+    <div class="navigation">
+        <nav class="navigation__div">
+            <div class="navigation__svg"></div>
+            <div class="navigation__links">
+                <a href="#about" alt="click to read all about me">About</a>
+                <a href="#projects" alt="click to read all about my projects">Projects</a>
+                <a href="#contact" alt="click to get my contact detalis">Contact</a>
+            </div>
+        </nav>
+    </div>
 
     <div class="background">
-        <canvas class="background__canvas"></canvas>
+        <canvas class="background__canvas" alt="3D rendering of my name that's slowly rotating"></canvas>
+    </div>
+
+    <div class="projects" id="projects">
     </div>
 
     <!-- SCRIPTS -->
     <script src="./src/three.min.js"></script>
-    <script type="module" src="app.js"></script>
+    <script type="module" src="./src/3D/background_animation.js"></script>
     <script type="module" src="./src/AsciiEffect.js"></script>
+    <script type="module" src="./src/3D/camera.js"></script>
 
 </body>
 </html>
