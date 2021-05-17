@@ -21,40 +21,31 @@ scene = new THREE.Scene();
 
 //camera
 camera = new THREE.OrthographicCamera( animationDivWidth / - 5, animationDivWidth / 5, animationDivHeight / 5, animationDivHeight / - 5, 0, 5000 );
-camera.position.z = 8;
+camera.position.y = 2800;
+camera.rotation.x = -0.75;
 
 //light
-const directionalLight = new THREE.DirectionalLight(0xffffff, 2);
-directionalLight.position.set(1, 1, 5).normalize();
-scene.add(directionalLight);
+const light = new THREE.PointLight(0xffffff, 1);
+light.position.set(0,4000,200);
+scene.add(light);
 
 //background color
-scene.background = new THREE.Color(0x00adad);
+scene.background = new THREE.Color(0x461661);
 
-//text
-let textContent = "kulik";
+//model
+const mtlLoader = new THREE.MTLLoader();
+mtlLoader.load('./src/3D/logo_3d.mtl', function(materials) {
+    materials.preload();
 
-const loader = new THREE.FontLoader();
-loader.load( 'src/Poppins/Poppins Black_Regular.json', function ( font ) {
-    let geometry = new THREE.TextGeometry( textContent, {
-        font: font,
-        size: 100,
-        height: 0.5,
-        curveSegments: 100,
-        bevelEnabled: true,
-        bevelThickness: 0,
-        bevelSize: 0,
-        bevelSegments: 3
-    } );
-    geometry.center();
-    let material = new THREE.MeshStandardMaterial( {
-        color: 0x008080,
-    } );
-    mesh = new THREE.Mesh( geometry, material );
-    mesh.position.set(0,-150,-1000);
-    mesh.scale.z = 1000;
-    mesh.rotation.x = Math.PI * -0.25;
-} );
+    const objLoader = new THREE.OBJLoader();
+    objLoader.setMaterials(materials);
+    objLoader.load('./src/3D/logo_3d.obj', function(object) {
+        mesh = object; //accessing the global variable
+        mesh.position.z = -1000;
+        mesh.rotation.y = Math.PI / 2;
+        mesh.scale.set(80,1180,80);
+    });
+});
 
 //renderer
 let canvas = document.getElementsByClassName("background__canvas")[0];
@@ -74,7 +65,7 @@ const tick = () => {
 
     if (mesh !== null) {
         scene.add(mesh);
-        mesh.rotation.z = elapsedTime * 0.1;
+        mesh.rotation.y = elapsedTime * 0.05;
     }
 
     //render
