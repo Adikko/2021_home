@@ -14,6 +14,11 @@ $accent_color: #461661;
 }
 
 @font-face {
+    font-family: "Poppins-Regular";
+    src: url("../src/Poppins/Poppins-Regular.ttf") format("truetype");
+}
+
+@font-face {
     font-family: "Poppins-ExtraLight";
     src: url("../src/Poppins/Poppins-ExtraLight.ttf") format("truetype");
 }
@@ -29,60 +34,37 @@ $accent_color: #461661;
     text-decoration: none;
 }
 
+.br-mobile { // controlling the break line on mobile viewport
+    @media (orientation: landscape) {
+        display: none;
+    }
+}
+
 h1 {
     font-family: "Poppins-Medium", sans-serif;
     color: $accent_color;
     font-size: calc(3vh + 3vw);
 }
 
-.navigation {
-    position: absolute;
-    width: 100%;
-    height: 300%;
-    top: 0px;
-}
-
-.navigation__div {
-    position: sticky;
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    background-color: $base_color;
-    filter: drop-shadow(0 0 5vh rgba($accent_color, 0.3));
-    z-index: 1;
-    top: 0px;
-}
-
-.navigation__svg {
-    width: 5vw;
-    padding: calc(1vh + 1vw);
-}
-
-.navigation__svg > svg {
-    z-index: 1000 !important;
-    fill: $accent_color;
-}
-
-.navigation__links {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-}
-
-.navigation__links > a {
-    font-family: "Poppins-Medium", sans-serif;
-    font-size: calc(0.7vh + 0.7vw);
+h2 {
+    font-family: "Poppins-ExtraLight", sans-serif;
     color: $accent_color;
-    margin: calc(0.9vh + 0.9vw);
+    font-size: calc(1.2vh + 1.2vw);
+}
+
+strong {
+    font-family: "Poppins-Regular", sans-serif;
 }
 
 .background {
     height: 100%;
     width: 100%;
     background-color: $accent_color;
-    position: absolute;
+    position: fixed;
+    @media (orientation: portrait) {
+        position: absolute; // unfortunately, the address bar caused some unwanted movement
+    }
     display: flex;
-    z-index: 998;
 }
 
 .background__logo {
@@ -113,45 +95,111 @@ h1 {
     z-index: 999;
 }
 
-.about {
-    min-height: 100%;
-    width: 100%;
-    top: 100%;
-    background-color: whitesmoke;
+.contents {
     position: absolute;
+    top: 100%;
     display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.about {
+    padding: 10vw;
+    background-color: whitesmoke;
+    display: flex;
+    flex-direction: column;
+    align-content: space-between;
+    align-items: center;
+    justify-content: center;
 }
 
 .about__h1 {
-    position: absolute;
-    top: 30%;
-    left: 30%;
+    padding-top: calc(2vh + 2vw);
+    text-align: center;
+}
+
+.about__h2 {
+    padding: calc(2vh + 2vw);
+    text-align: left;
 }
 
 .projects {
-    min-height: 100%;
-    width: 100%;
-    top: 200%;
+    padding: 10vw;
     background-color: $base_color;
-    position: absolute;
     display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
+.projects__div {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    flex-direction: column;
 }
 
 .projects__h1 {
-    position: absolute;
-    top: 30%;
-    right: 30%;
+    padding-top: calc(2vh + 2vw);
+    text-align: center;
+}
+
+.projects__h2 {
+    padding: calc(2vh + 2vw);
+    text-align: center;
+}
+
+.projects__showcase {
+    padding-top: calc(2vh + 2vw);
+    display: flex;
+    flex-direction: row;
+    @media (orientation: portrait) {
+        flex-direction: column;
+    }
+    justify-content: space-around;
+}
+
+.projects__showcase > figure {
+    width: 20vw;
+    @media (orientation: portrait) {
+        width: 70vw;
+    }
+}
+
+.projects__showcase > figure > figcaption {
+    position: relative;
+    padding: 2vh;
+    bottom: 60px;
+    font-family: "Poppins-Medium", sans-serif;
+    color: $base_color;
+    font-size: calc(1vh + 1vw);
+    text-align: center;
+    @media (orientation: portrait) {
+        font-size: calc(1.2vh + 1.2vw);
+    }
+}
+
+.projects__showcase > figure > img {
+    width: 100%;
+    filter: brightness(40%) sepia(100%) hue-rotate(-110deg) saturate(600%) contrast(0.8);
+    background-color: rgba($accent_color, 0.5);
+    transition: filter 0.5s ease;
+}
+
+.projects__showcase > figure > img:hover {
+    width: 100%;
+    filter: brightness(100%) sepia(0%) hue-rotate(0deg) saturate(100%) contrast(1);
 }
 
 .contact {
     min-height: 60%;
     width: 100%;
-    top: 300%;
+    top: 100%;
     background-color: $accent_color;
     position: absolute;
     display: flex;
 }
 
+//animations
 @keyframes fade_in {
     0% {
         opacity: 0;

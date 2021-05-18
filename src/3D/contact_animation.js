@@ -8,7 +8,6 @@ let animationDivHeight = (document.getElementsByClassName("contact")[0].clientHe
 let animationDivWidth;
 if (mobileView.matches) {
     animationDivWidth = document.getElementsByClassName("contact")[0].clientWidth * 1;
-    console.log("portrait");
 } else {
     animationDivWidth = document.getElementsByClassName("contact")[0].clientWidth * 0.5;
 }
