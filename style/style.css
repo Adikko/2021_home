@@ -211,17 +211,35 @@ strong {
   }
 }
 
-.projects__showcase > figure {
+.projects__showcase--figure {
   width: 20vw;
 }
 
 @media (orientation: portrait) {
-  .projects__showcase > figure {
+  .projects__showcase--figure {
     width: 70vw;
   }
 }
 
-.projects__showcase > figure > figcaption {
+.projects__showcase--figure > img {
+  width: 100%;
+  -webkit-filter: brightness(40%) sepia(100%) hue-rotate(-110deg) saturate(600%) contrast(0.8);
+          filter: brightness(40%) sepia(100%) hue-rotate(-110deg) saturate(600%) contrast(0.8);
+  background-color: rgba(70, 22, 97, 0.5);
+  -webkit-transition: -webkit-filter 0.5s ease;
+  transition: -webkit-filter 0.5s ease;
+  transition: filter 0.5s ease;
+  transition: filter 0.5s ease, -webkit-filter 0.5s ease;
+  border-radius: 2vh;
+}
+
+.projects__showcase--figure > img:hover {
+  width: 100%;
+  -webkit-filter: brightness(100%) sepia(0%) hue-rotate(0deg) saturate(100%) contrast(1);
+          filter: brightness(100%) sepia(0%) hue-rotate(0deg) saturate(100%) contrast(1);
+}
+
+.projects__showcase--figure > figcaption {
   position: relative;
   padding: 2vh;
   bottom: 60px;
@@ -232,26 +250,9 @@ strong {
 }
 
 @media (orientation: portrait) {
-  .projects__showcase > figure > figcaption {
+  .projects__showcase--figure > figcaption {
     font-size: calc(1.2vh + 1.2vw);
   }
-}
-
-.projects__showcase > figure > img {
-  width: 100%;
-  -webkit-filter: brightness(40%) sepia(100%) hue-rotate(-110deg) saturate(600%) contrast(0.8);
-          filter: brightness(40%) sepia(100%) hue-rotate(-110deg) saturate(600%) contrast(0.8);
-  background-color: rgba(70, 22, 97, 0.5);
-  -webkit-transition: -webkit-filter 0.5s ease;
-  transition: -webkit-filter 0.5s ease;
-  transition: filter 0.5s ease;
-  transition: filter 0.5s ease, -webkit-filter 0.5s ease;
-}
-
-.projects__showcase > figure > img:hover {
-  width: 100%;
-  -webkit-filter: brightness(100%) sepia(0%) hue-rotate(0deg) saturate(100%) contrast(1);
-          filter: brightness(100%) sepia(0%) hue-rotate(0deg) saturate(100%) contrast(1);
 }
 
 .contact {
@@ -263,6 +264,34 @@ strong {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+}
+
+.contact__info {
+  padding: 10vw;
+  float: right;
+  width: 50vw;
+  font-size: calc(1vh + 1vw);
+  color: white;
+}
+
+@media (orientation: portrait) {
+  .contact__info {
+    width: 100%;
+  }
+}
+
+.contact__info--mail {
+  padding-bottom: calc(2vh + 2vw);
+  line-height: calc(1vh + 1vw);
+  font-size: calc(1vh + 1vw);
+  color: white;
+  font-family: "Poppins-Regular", sans-serif;
+}
+
+.contact__info--mail > a > h1 {
+  font-size: calc(1.5vh + 1.5vw);
+  color: white;
+  font-family: "Poppins-Regular", sans-serif;
 }
 
 @-webkit-keyframes fade_in {

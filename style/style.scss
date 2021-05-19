@@ -158,14 +158,27 @@ strong {
     justify-content: space-around;
 }
 
-.projects__showcase > figure {
+.projects__showcase--figure {
     width: 20vw;
     @media (orientation: portrait) {
         width: 70vw;
     }
 }
 
-.projects__showcase > figure > figcaption {
+.projects__showcase--figure > img {
+    width: 100%;
+    filter: brightness(40%) sepia(100%) hue-rotate(-110deg) saturate(600%) contrast(0.8);
+    background-color: rgba($accent_color, 0.5);
+    transition: filter 0.5s ease;
+    border-radius: 2vh;
+}
+
+.projects__showcase--figure > img:hover {
+    width: 100%;
+    filter: brightness(100%) sepia(0%) hue-rotate(0deg) saturate(100%) contrast(1);
+}
+
+.projects__showcase--figure > figcaption {
     position: relative;
     padding: 2vh;
     bottom: 60px;
@@ -178,18 +191,6 @@ strong {
     }
 }
 
-.projects__showcase > figure > img {
-    width: 100%;
-    filter: brightness(40%) sepia(100%) hue-rotate(-110deg) saturate(600%) contrast(0.8);
-    background-color: rgba($accent_color, 0.5);
-    transition: filter 0.5s ease;
-}
-
-.projects__showcase > figure > img:hover {
-    width: 100%;
-    filter: brightness(100%) sepia(0%) hue-rotate(0deg) saturate(100%) contrast(1);
-}
-
 .contact {
     min-height: 60%;
     width: 100%;
@@ -197,6 +198,31 @@ strong {
     background-color: $accent_color;
     position: absolute;
     display: flex;
+}
+
+.contact__info {
+    padding: 10vw;
+    float: right;
+    width: 50vw;
+    @media (orientation: portrait) {
+        width: 100%;
+    }
+    font-size: calc(1vh + 1vw);
+    color: $base_color;
+}
+
+.contact__info--mail {
+    padding-bottom: calc(2vh + 2vw);
+    line-height: calc(1vh + 1vw);
+    font-size: calc(1vh + 1vw);
+    color: $base_color;
+    font-family: "Poppins-Regular", sans-serif;
+}
+
+.contact__info--mail > a > h1 {
+    font-size: calc(1.5vh + 1.5vw);
+    color: $base_color;
+    font-family: "Poppins-Regular", sans-serif;
 }
 
 //animations
