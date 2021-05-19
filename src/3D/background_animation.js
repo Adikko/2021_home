@@ -43,7 +43,7 @@ mtlLoader.load('./src/3D/logo_3d.mtl', function(materials) {
         mesh = object; //accessing the global variable
         mesh.position.z = -1000;
         mesh.rotation.y = Math.PI / 2;
-        mesh.scale.set(80,1180,80);
+        mesh.scale.set(100,1180,100);
     });
 });
 
