@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Generator of a bygone Era</title>
+    <link rel="stylesheet" href="./style/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="./images/favicon/fav.png" type="image/png">
+    <!--HTML2CANVAS AND JQUERY, LIBRARIES LOAD FIRST-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="./scripts/html2canvas.js"></script>
+</head>
+
+<body>
+
+<div class="load" id="loadScreen">
+    <svg class="loadingAnimationElements" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 99 99"><defs></defs><title>twoSquares</title>
+        <g id="smallWindwos">
+        <rect class="loadingSVG1" x="37" y="37" width="25" height="25"/>
+        <rect class="loadingSVG2" x="2" y="2" width="95" height="95"/>
+        </g>
+    </svg>
+</div>
+
+<div class="menu">
+    <div class="empty">
+    </div>
+    <svg id="logoElements" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 374 339"><defs><style>.cls-1{fill:none;stroke:#fff;stroke-miterlimit:10;stroke-width:4px;}</style></defs><title>logo</title><g id="smallWindwos"><rect class="cls-1" x="2" y="2" width="95" height="95"/><rect class="cls-1" x="2" y="242" width="95" height="95"/><rect class="cls-1" x="152" y="22" width="25" height="25"/><rect class="cls-1" x="269.5" y="122" width="95" height="95"/><rect class="cls-1" x="224.5" y="142" width="25" height="25"/><rect class="cls-1" x="74.5" y="122" width="95" height="95"/><rect class="cls-1" x="29.5" y="142" width="25" height="25"/><rect class="cls-1" x="152" y="262" width="25" height="25"/><rect class="cls-1" x="197" y="242" width="95" height="95"/><rect class="cls-1" x="347" y="262" width="25" height="25"/><rect class="cls-1" x="197" y="2" width="95" height="95"/><rect class="cls-1" x="347" y="22" width="25" height="25"/></g></svg>
+    <h1 class="logoType">Generator of a bygone Era</h1>
+    <br>
+    <h2>Floors</h2>
+    <div class="floorsButtons">
+        <button class="mainSmallerButton" onclick="expandVertically()"><svg id="mainIcon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus-square"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg></button>
+        <button class="mainSmallerButton" onclick="shrinkVertically()"><svg id="mainIcon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-minus-square"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="8" y1="12" x2="16" y2="12"></line></svg></button>
+    </div>
+    <br>
+    <h2>Gates</h2>
+    <div class="floorsButtons">
+        <button class="mainSmallerButton" onclick="expandHorizontally()"><svg id="mainIcon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus-square"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg></button>
+        <button class="mainSmallerButton" onclick="shrinkHorizontally()"><svg id="mainIcon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-minus-square"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="8" y1="12" x2="16" y2="12"></line></svg></button>
+    </div>
+    <br>
+    <h2 class="logoType">Navigation</h2>
+    <div class="navigationButtons">
+        <button class="mainSmallerButton" onclick="about()"><svg id="mainIcon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-info"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg></button>
+        <button class="mainSmallerButton" onclick="capture()"><svg id="mainIcon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather feather-download"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg></button>
+    </div>
+    <div class="emptyLower">
+    </div>
+</div>
+
+<div class="mainContainer" id="mainContainer"> <!--ADDED THIS DIV TO MANAGE THE TABLE SIZE-->
+    <table class="main" id="tableGrid">
+        <tr>
+            <td><img src="./images/windows/9.png"></td>
+            <td><img src="./images/windows/8.png"></td>
+            <td><img src="./images/windows/7.png"></td>
+        </tr>
+        <tr>
+            <td><img src="./images/windows/6.png"></td>
+            <td><img src="./images/windows/5.png"></td>
+            <td><img src="./images/windows/4.png"></td>
+        </tr>
+        <tr>
+            <td><img src="./images/windows/3.png"></td>
+            <td><img src="./images/windows/2.png"></td>
+            <td><img src="./images/windows/1.png"></td>
+        </tr>
+    </table>
+</div>
+
+<div class="papercut" id="papercut">
+    <button class="closePapercut" onclick="closePapercut()"><svg id="mainIcon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-trash-2"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path><line x1="10" y1="11" x2="10" y2="17"></line><line x1="14" y1="11" x2="14" y2="17"></line></svg></button>
+    <button class="downloadPapercut" id="downloadPapercut" onclick="saveBase64AsFile()"><svg id="mainIcon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-download"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg></button>
+    <table class="papercutTable" id="papercutTable">
+        <tr id="foldUpper">
+            <td></td>
+            <td></td>
+            <td></td>
+            <td><img src="./images/cut/cut.png" class="downCutMark"></td>
+            <td></td>
+        </tr>
+        <tr id="roof">
+            <td></td>
+            <td></td>
+            <td><img src="./images/cut/cut.png" class="rightCutMark"></td>
+            <td><img src="./images/roof/roof.jpg"></td>
+            <td><img src="./images/cut/cut.png" class="leftCutMark"></td>
+        </tr>
+        <tr id="main">
+            <td><img src="./images/cut/cut_small.png"</td>
+            <!--DOMPRINT.JS APPENDS GENERATED PICTURES HERE-->
+            <td id="papercutTableFacade1"></td>
+            <td id="papercutTableFacade2"></td> <!--SECOUND AND FOURTH PANELS ARE FLIPPED HORIZONTALLY-->
+            <td id="papercutTableFacade3"></td>
+            <td id="papercutTableFacade4"></td>
+        </tr>
+        <tr id="QRcode">
+            <td></td>
+            <td><img src="./images/cut/cut.png" class="rightCutMark"></td>
+            <td><img src="./images/QR/urlQR.png"></td>
+            <td><img src="./images/cut/cut.png" class="leftCutMark"></td>
+            <td></td>
+        </tr>
+        <tr id="foldLower">
+            <td></td>
+            <td></td>
+            <td><img src="./images/cut/cut.png" class="upperCutMark"></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+</div>
+
+<div class="about" id="about">
+    <button class="closePapercut" onclick="about()"><svg id="mainIcon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></button>
+    <div class="aboutText">
+        <h3>Generator of a bygone Era</h3>
+        <h4>About the project</h4>
+        <h5>
+            Our story starts at the end of the Secound World War.
+            <p>
+            European community has started to grow at an unprecedented rate. People needed accommodation and they needed it fast.
+            The relatively low cost have put the pre-fabricated and pre-stressed concrete to fruition. And so the first pre-fabricated housing estates came to life.
+            They were originally designed to be reminiscent of ships, that gently flow through the ocean of green postures, parks and common areas.
+            Paneláky, as they are colloquially called in Czech Republic, are a relic of a bygone era. An era of cheap, uniform design…
+            Years have passed and the now faded pieces of civil engineering are still here, overwatching the growth of a new community.
+            </p>
+            <p>
+            I've begun documenting those remnants of a bygone era a couple of years ago. Some of the buildings were painted in a colorful way to ditch the depressing look, though the result often leaves much to be desired.
+            Some were touched only by the passage of time.
+            </p>
+            <p>
+            Digital retouch of the captured frames left me wondering. What if I could make my own compositions? What if others could create them too? This project was originally designed as an interactive part of my photographic exhibition.
+            </p>
+            Feel free to download the facade you generated! You can print it, fold it and glue it together and surround yourself with architecture of the past.
+        </h5>
+        <h4>About the author</h4>
+        <h5>
+            <p>Hello!</p>
+            My name is Adrian and I’m in love with the creative process.
+            I have been trying to show other people how I view the world through photography since I was about 12 years old.
+            Starting with a point and shoot film camera that my mom graciously borrowed me and later on moving into the world of digitized pictures with my first camera-phone I have begun to vitalize this new pass-time activity of mine.
+            Years have passed and my newly acquired hobby has turned into a passion.
+        </h5>
+    </div>
+    <div class="aboutSocial">
+        <a href="https://www.instagram.com/adrian__kulik"><svg id="aboutSocialSVG" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>iconmonstr-instagram-1q1</title><path d="M12,2.16c3.2,0,3.58,0,4.85.07,3.25.15,4.77,1.69,4.92,4.92.06,1.27.07,1.65.07,4.85s0,3.59-.07,4.85c-.15,3.23-1.66,4.77-4.92,4.92-1.27.06-1.64.07-4.85.07s-3.58,0-4.85-.07c-3.26-.15-4.77-1.7-4.92-4.92-.06-1.27-.07-1.64-.07-4.85s0-3.58.07-4.85C2.38,3.92,3.9,2.38,7.15,2.23,8.42,2.18,8.8,2.16,12,2.16ZM12,0C8.74,0,8.33,0,7.05.07c-4.35.2-6.78,2.62-7,7C0,8.33,0,8.74,0,12S0,15.67.07,17c.2,4.36,2.62,6.78,7,7C8.33,24,8.74,24,12,24s3.67,0,4.95-.07c4.35-.2,6.78-2.62,7-7C24,15.67,24,15.26,24,12s0-3.67-.07-4.95c-.2-4.35-2.62-6.78-7-7C15.67,0,15.26,0,12,0Zm0,5.84A6.16,6.16,0,1,0,18.16,12,6.16,6.16,0,0,0,12,5.84ZM12,16a4,4,0,1,1,4-4A4,4,0,0,1,12,16ZM18.41,4.15a1.44,1.44,0,1,0,1.43,1.44A1.44,1.44,0,0,0,18.41,4.15Z" transform="translate(0)"/></svg></a>
+        <br>
+        <a href="https://github.com/adikko"><svg id="aboutSocialSVG" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>iconmonstr-githeub-3</title><path d="M19,0H5A5,5,0,0,0,0,5V19a5,5,0,0,0,5,5H19a5,5,0,0,0,5-5V5A5,5,0,0,0,19,0ZM14.53,19.59c-.4.08-.53-.17-.53-.38V17a1.89,1.89,0,0,0-.55-1.48c1.78-.2,3.65-.88,3.65-3.95a3.07,3.07,0,0,0-.82-2.14,2.88,2.88,0,0,0-.08-2.12s-.67-.22-2.2.82a7.54,7.54,0,0,0-4,0c-1.53-1-2.2-.82-2.2-.82a2.85,2.85,0,0,0-.08,2.11,3.11,3.11,0,0,0-.82,2.15c0,3.07,1.86,3.75,3.64,4A1.73,1.73,0,0,0,10,16.61a1.72,1.72,0,0,1-2.33-.67,1.68,1.68,0,0,0-1.22-.83s-.78,0-.06.49a2.12,2.12,0,0,1,.89,1.17s.46,1.43,2.69.95V19.2c0,.22-.13.46-.53.39a8,8,0,1,1,5.06,0Z"/></svg></a>
+        <br>
+        <a href="https://www.behance.net/adriankulik"><svg id="aboutSocialSVG" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>iconmonstr-behance-3e</title><path d="M8.23,15H6V13H8.26C10.14,13,10.26,15,8.23,15ZM15,12.33h3A1.51,1.51,0,0,0,15,12.33ZM8.18,9H6v2H8.39C10.06,11,10.33,9,8.18,9ZM24,5V19a5,5,0,0,1-5,5H5a5,5,0,0,1-5-5V5A5,5,0,0,1,5,0H19A5,5,0,0,1,24,5ZM14,8h5V7H14Zm-3.55,3.62c1.9-1,1.83-4.55-1.81-4.61H4V17H8.31C12.83,17,12.76,12.46,10.45,11.62Zm9.49.6a3.35,3.35,0,0,0-3.59-3c-2.09,0-3.35,1.34-3.35,4S14.37,17,16.42,17a3.38,3.38,0,0,0,3.4-2H17.7a1.64,1.64,0,0,1-2.76-1.35H20A9.2,9.2,0,0,0,19.94,12.22Z"/></svg></a>
+    </div>
+</div>
+    
+<!--SCRIPTS LOAD LAST, SO THEY REFERENCE EXISTING DOM (DOCUMENT OBJECT MODEL) FEATURES. THIS WAY WE DON'T END UP REFERENCING NON-EXISTENT FEATURES. CONTRARY TO LIBRARIES, WHICH LOAD FIRST, SINCE THEY DON'T REFERENCE THE DOM-->
+
+<script src="scripts/loadingScreen.js"></script>
+<script src="scripts/randomPngAppend.js"></script>
+<script src="scripts/tableManipulation.js"></script>
+<script src="scripts/DOMprint.js"></script>
+<script src="scripts/about.js"></script>
+
+</body>
+</html>
+    

@@ -156,6 +156,7 @@ strong {
         flex-direction: column;
     }
     justify-content: space-around;
+    align-content: center;
 }
 
 .projects__showcase--figure {
@@ -163,9 +164,17 @@ strong {
     @media (orientation: portrait) {
         width: 70vw;
     }
+    transition: transform 0.2s ease;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.projects__showcase--figure > img {
+.projects__showcase--figure:hover {
+    transform: scale(1.1);
+}
+
+.projects__showcase--figure > video {
     width: 100%;
     filter: brightness(40%) sepia(100%) hue-rotate(-110deg) saturate(600%) contrast(0.8);
     background-color: rgba($accent_color, 0.5);
@@ -173,7 +182,7 @@ strong {
     border-radius: 2vh;
 }
 
-.projects__showcase--figure > img:hover {
+.projects__showcase--figure > video:hover {
     width: 100%;
     filter: brightness(100%) sepia(0%) hue-rotate(0deg) saturate(100%) contrast(1);
 }
@@ -181,7 +190,7 @@ strong {
 .projects__showcase--figure > figcaption {
     position: relative;
     padding: 2vh;
-    bottom: 60px;
+    bottom: 10vh;
     font-family: "Poppins-Medium", sans-serif;
     color: $base_color;
     font-size: calc(1vh + 1vw);
@@ -192,12 +201,17 @@ strong {
 }
 
 .contact {
-    min-height: 60%;
     width: 100%;
     top: 100%;
     background-color: $accent_color;
     position: absolute;
     display: flex;
+}
+
+.contact__h1 {
+    padding-top: calc(2vh + 2vw);
+    text-align: center;
+    color: $base_color;
 }
 
 .contact__info {

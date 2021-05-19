@@ -1,0 +1,6 @@
+file: png
+ratio: 1:1
+size: 500px x 500px
+window: 450px x 450px
+selection --> expand by 10px
+selection --> feather by 5px

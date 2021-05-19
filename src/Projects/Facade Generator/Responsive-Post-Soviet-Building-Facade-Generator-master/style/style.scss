@@ -1,0 +1,444 @@
+* {
+    overflow: hidden;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    margin: 0px;
+    padding: 0px;
+    background-image: url('./bg/original_sharp.jpg'); /* FOLLOWING 3 LINES ARE RESPONSIBLE FOR FILLING THE SCREEN WITH THE PHOTOGRAPH */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+}
+
+/*FONT SIZES*/
+
+h1 {
+    font-size: calc(0.7vh + 0.7vw);
+    @media screen and (orientation: portrait) {
+        font-size: calc(1vh + 1vw);
+    }
+}
+
+h2 {
+    font-size: calc(0.4vh + 0.4vw);
+    @media screen and (orientation: portrait) {
+        font-size: calc(0.7vh + 0.7vw);
+    }
+}
+
+h3 {
+    font-size: calc(1vh + 1vw);
+    @media screen and (orientation: portrait) {
+        font-size: calc(1.5vh + 1.5vw);
+    }
+}
+
+h4 {
+    font-size: calc(0.8vh + 0.8vw);
+    @media screen and (orientation: portrait) {
+        font-size: calc(1vh + 1vw);
+    }
+}
+
+h5 {
+    font-size: calc(0.5vh + 0.5vw);
+    @media screen and (orientation: portrait) {
+        font-size: calc(0.6vh + 0.6vw);
+    }
+}
+
+/*HTML ELEMENTS*/
+
+#tableGrid {
+    clear: none;
+    border: 0px solid black;
+    text-align: center;
+    table-layout: fixed;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* NO ONE WILL BE ABLE TO SELECT THE PICTURES, WHICH WILL NOT INTERFERE WITH THE CREATIVE PROCESS */
+}
+
+td, td, th, tbody {
+    padding: 0px;
+    border-bottom: 0px;
+    margin: 0px;
+}
+
+.main img {
+    width: 100%;
+}
+
+.papercutTable img {
+    width: calc(10vh + 10vw);
+    @media screen and (orientation: portrait) {
+        width: 18vw;
+    }
+    height: auto;
+    display: block;
+}
+
+#papercutTable {
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    position: absolute;
+    top: calc(2vh + 2vw);
+    @media screen and (orientation: portrait) {
+        top: calc(25vh + 2vw);
+    }
+    clear: none; 
+    border: 0px solid black;
+    border-spacing: 2px;
+    text-align: center;
+    table-layout: fixed;
+    pointer-events: none; /* NO ONE WILL BE ABLE TO SELECT THE PICTURES, WHICH WILL NOT INTERFERE WITH THE CREATIVE PROCESS */
+}
+
+#logoElements {
+    display: inline-flex;
+    width: inherit;
+    @media screen and (orientation: portrait) {
+        max-height: 6vh;
+        max-width: 10vw; /*SVG WIDTH HAS HAD TO BE LIMITED*/
+        margin: calc(1vh + 1vw);
+    }
+}
+
+#mainIcon {
+    height: calc(1vh + 1vw);
+    display: block;
+    margin: auto;
+    width: auto;
+    stroke-width: 1.5px;
+    stroke: #ffffff;
+    @media screen and (orientation: portrait) {
+        height: calc(1.5vh + 1.5vw);
+        width: auto;
+        stroke-width: 1px;
+    }
+}
+
+
+#aboutSocialSVG {
+    height: 5vh;
+    display: block;
+    fill: #222;
+}
+
+
+/*DIVS*/
+
+.load {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(59, 59, 59);
+    z-index: 10;
+    position: absolute;
+    transition: 0.7s ease-in;
+    transition-delay: 3s; /* ADDED THE DELAY, SO PEOPLE CAN SEE THE LOADING ANIMATION. MIGHT DELETE IT LATER ON, WHEN I WILL HAVE A LOT OF PNG FILES PREPARED */
+}
+
+.loadingAnimationElements {
+    width: 10%;
+    height: 10%;
+    position: absolute;
+    top: calc(50% - 50px);
+    left: calc(50% - 200px);
+    @media screen and (orientation: portrait) {
+        top: 50%;
+        left: 50%;
+        width: 30%;
+        height: 30%;
+    }
+}
+
+.loadingSVG1, .loadingSVG2 {
+    fill: none;
+    stroke: #fff;
+    stroke-miterlimit: 10;
+    stroke-width: 4px;
+}
+
+.loadingSVG1 {
+    animation: loadingAnimation 3s infinite 0s cubic-bezier(0.82, 0.0, 0.22, 1);
+}
+
+.load-after {
+    transform: translateY(-110vh);
+}
+
+.mainContainer {
+    background-image: url('./bg/original_sharp.jpg'); /* FOLLOWING 3 LINES ARE RESPONSIBLE FOR FILLING THE TABLE BACKGROUND WITH THE PHOTOGRAPH. IT'S DISPLAYED TWICE, BECAUSE THE RENDERED IMAGE HAS TO HAVE A BACKGROUND (I WANT TO SKIP RENDERING A PNG FILE SINCE IT'S VERY HEAVY) */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    pointer-events: none; /* NO ONE WILL BE ABLE TO SELECT THE PICTURES, WHICH WILL NOT INTERFERE WITH THE CREATIVE PROCESS */
+    display: inline-flex;
+    padding: 0.5rem;
+    height: calc(100vh - 1rem); /* THE DIV INSIDE OF WHICH THE TABLE IS LOCATED HAS TO HAVE THE WIDTH SET IN ORDER TO CHANGE THE TABLE WIDTH IN THE TABLE CLASS */
+    width: calc(90vw - 1rem);
+    float: right;
+    @media screen and (orientation: portrait) {
+        height: calc(95vh - 1rem); /* THE DIV INSIDE OF WHICH THE TABLE IS LOCATED HAS TO HAVE THE WIDTH SET IN ORDER TO CHANGE THE TABLE WIDTH IN THE TABLE CLASS */
+        width: calc(100vw - 1rem);
+    }
+}
+
+.about {
+    height: 120vh;
+    width: 100vw;
+    background-color: white;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    bottom: 0vh;
+    opacity: 1;
+    transition: 0.5s ease;
+    color: #222;
+}
+
+.about_after {
+    transition: 0.5s ease;
+    height: 120vh;
+    width: 100vw;
+    background-color: white;
+    position: relative;
+    display: inline-block;
+    z-index: 2;
+    bottom: 240vh;
+    @media screen and (orientation: portrait) {
+        bottom: 250vh;
+    }
+    opacity: 1;
+}
+
+.aboutText {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 16vh;
+    color: rgb(70, 70, 70);
+    padding: 10vh;
+}
+
+.aboutSocial {
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    color: rgb(70, 70, 70);
+    width: calc(10vw + 10vh);
+    padding: 0px 0px 0vh 10vh;
+    bottom: 10vh;
+    justify-content: space-evenly
+
+}
+
+.papercut {
+    height: 120vh;
+    width: 100vw;
+    background-color: white;
+    position: relative;
+    display: inline-block;
+    flex-direction: column;
+    bottom: 0vh;
+    opacity: 1;
+    transition: 0.5s ease;
+}
+
+.papercut_after {
+    transition: 0.5s ease;
+    height: 120vh;
+    width: 100vw;
+    background-color: white;
+    position: relative;
+    display: inline-block;
+    z-index: 2;
+    bottom: 120vh;
+    @media screen and (orientation: portrait) {
+        bottom: 130vh;
+    }
+    opacity: 100;
+}
+
+#papercutTableFacade2, #papercutTableFacade4 { //EVERY OTHER FACADE IS MIRRORED, SO THERE ARE NO CONTRASTING WALLS
+    transform: scaleX(-1);
+}
+
+.leftCutMark {
+    transform: rotate(180deg);
+}
+
+.rightCutMark {
+    transform: rotate(0deg);
+}
+
+.downCutMark {
+    transform: rotate(90deg);
+}
+
+.upperCutMark {
+    transform: rotate(270deg);
+}
+
+.papercutInstructions {
+    display: inline-block;
+    top: -65vh;
+    @media screen and (orientation: portrait) {
+        top: -5vh;
+    }
+    position: relative;
+    color: #555555;
+    margin: calc(1vh + 1vw);
+    z-index: 2;
+}
+
+.empty {
+    height: 5vh;
+    @media screen and (orientation: portrait) {
+        display: none;
+    }
+}
+
+.emptyLower {
+    height: 5vh;
+    @media screen and (orientation: portrait) {
+        display: none;
+    }
+}
+
+.logoType {
+    @media screen and (orientation: portrait) {
+        display: none;
+    }
+}
+
+.menu {
+    height: 100vh;
+    width: 8vw;
+    box-shadow: 0px 0px 10px black;
+    z-index: 1;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: space-around;
+    background-color: rgba($color: #ffffff, $alpha: 0.5);
+    padding: 1vw;
+    height: 100vh;
+    width: 8vw;
+    @media screen and (orientation: portrait) {
+        align-items: center;
+        flex-direction: row;
+        height: 14vh;
+        width: 98vw; /* BECAUSE THE PADDING IS EQUAL TO 1vw, WE HAVE TO SUBSTRACT 1vw FROM EACH SIDE */
+    }
+}
+
+.menu button {
+    background-color: #ddd;
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: calc(1vh + 1vw);
+    margin: calc(0.1vh + 0.1vw) calc(0.1vh + 0.1vw);
+    @media screen and (orientation: portrait) {
+        font-size: calc(2vh + 2vw);
+        margin: calc(0.2vh + 0.2vw) calc(0.2vh + 0.2vw);
+    }
+}
+
+.menu button:hover {
+    box-shadow: 0px 0px 10px white;
+    transition: 0.1s;
+}
+
+.floorsButtons {
+    display: inline-flex;
+    flex-direction: column;
+    @media screen and (orientation: portrait) {
+        flex-direction: row;
+    }
+}
+
+.navigationButtons {
+    display: inline-flex;
+    flex-direction: column;
+    @media screen and (orientation: portrait) {
+        flex-direction: row;
+    }
+}
+
+.closePapercut {
+    display: inline-block;
+    top: 26vh;
+    right: 5vw;
+    z-index: 2;
+    position: absolute;
+    background-color: rgb(218, 148, 148);
+    border: none;
+    color: white;
+    height: 4vh;
+    width: 4vh;
+    @media screen and (orientation: portrait) {
+        height: 6vh;
+        width: 6vh;
+    }
+}
+
+.downloadPapercut {
+    display: inline-block;
+    top: 26vh;
+    right: calc(5vw + 5vh);
+    @media screen and (orientation: portrait) {
+        right: calc(5vw + 7vh);
+    }
+    z-index: 2;
+    position: absolute;
+    background-color: rgb(148, 218, 152);
+    border: none;
+    color: white;
+    height: 4vh;
+    width: 4vh;
+    @media screen and (orientation: portrait) {
+        height: 6vh;
+        width: 6vh;
+    }
+}
+
+.mainSmallerButton {
+    background-color: #ddd;
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    height: 6vh;
+    width: 7vw;
+    font-size: calc(1vh + 1vw);
+}
+
+/* ANIMATIONS */
+
+@keyframes loadingAnimation {
+    0% {
+        transform: translateX(25px) translateY(25px);
+        }
+    25% {
+        transform: translateX(25px) translateY(-25px);
+        }
+    50% {
+        transform: translateX(-25px) translateY(-25px);
+        }
+    75% {
+        transform: translateX(-25px) translateY(25px);
+        }
+    100% {
+        transform: translateX(25px) translateY(25px);
+        }
+}
