@@ -123,7 +123,10 @@ strong {
 
 .about {
   padding: 10vw;
-  background-color: whitesmoke;
+  background-image: url("./about_bg.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -162,6 +165,7 @@ strong {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  z-index: 1;
 }
 
 .projects__div {
@@ -285,21 +289,40 @@ strong {
   color: white;
 }
 
-.contact__info {
+.contact__div {
+  width: 100%;
   padding: 10vw;
   float: right;
-  width: 50vw;
   font-size: calc(1vh + 1vw);
   color: white;
 }
 
+.contact__details {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
 @media (orientation: portrait) {
-  .contact__info {
-    width: 100%;
+  .contact__details {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
   }
 }
 
-.contact__info--mail {
+.contact__details--mail {
   padding-bottom: calc(2vh + 2vw);
   line-height: calc(1vh + 1vw);
   font-size: calc(1vh + 1vw);
@@ -307,7 +330,7 @@ strong {
   font-family: "Poppins-Regular", sans-serif;
 }
 
-.contact__info--mail > a > h1 {
+.contact__details--mail > a > h1 {
   font-size: calc(1.5vh + 1.5vw);
   color: white;
   font-family: "Poppins-Regular", sans-serif;

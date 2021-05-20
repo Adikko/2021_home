@@ -105,7 +105,10 @@ strong {
 
 .about {
     padding: 10vw;
-    background-color: whitesmoke;
+    background-image: url('./about_bg.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
     display: flex;
     flex-direction: column;
     align-content: space-between;
@@ -129,6 +132,7 @@ strong {
     display: flex;
     align-content: center;
     justify-content: center;
+    z-index: 1;
 }
 
 .projects__div {
@@ -214,18 +218,25 @@ strong {
     color: $base_color;
 }
 
-.contact__info {
+.contact__div {
+    width: 100%;
     padding: 10vw;
     float: right;
-    width: 50vw;
-    @media (orientation: portrait) {
-        width: 100%;
-    }
     font-size: calc(1vh + 1vw);
     color: $base_color;
 }
 
-.contact__info--mail {
+.contact__details {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    @media (orientation: portrait) {
+        flex-direction: column;
+    }
+}
+
+.contact__details--mail {
     padding-bottom: calc(2vh + 2vw);
     line-height: calc(1vh + 1vw);
     font-size: calc(1vh + 1vw);
@@ -233,7 +244,7 @@ strong {
     font-family: "Poppins-Regular", sans-serif;
 }
 
-.contact__info--mail > a > h1 {
+.contact__details--mail > a > h1 {
     font-size: calc(1.5vh + 1.5vw);
     color: $base_color;
     font-family: "Poppins-Regular", sans-serif;
