@@ -105,10 +105,11 @@ strong {
 
 .about {
     padding: 10vw;
-    background-image: url('./about_bg.jpg');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+    background-color: whitesmoke;
+    // background-image: url('./about_bg.jpg');
+    // background-position: center;
+    // background-repeat: no-repeat;
+    // background-size: cover;
     display: flex;
     flex-direction: column;
     align-content: space-between;
