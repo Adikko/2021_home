@@ -244,10 +244,17 @@ strong {
 .contact__details > a > img {
     width: 3vw;
     padding: 1.5vw;
+    @media (orientation: portrait) {
+        width: 8vw;
+        padding: 3vw;
+    }
 }
 
 .contact__div > svg {
     width: 5vw;
+    @media (orientation: portrait) {
+        width: 10vw;
+    }
     fill: $base_color;
 }
 

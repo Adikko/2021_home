@@ -338,9 +338,22 @@ strong {
   padding: 1.5vw;
 }
 
+@media (orientation: portrait) {
+  .contact__details > a > img {
+    width: 8vw;
+    padding: 3vw;
+  }
+}
+
 .contact__div > svg {
   width: 5vw;
   fill: white;
+}
+
+@media (orientation: portrait) {
+  .contact__div > svg {
+    width: 10vw;
+  }
 }
 
 .contact__details {
