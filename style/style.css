@@ -285,8 +285,9 @@ strong {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -ms-flex-line-pack: center;
-      align-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .contact__h1 {
@@ -296,7 +297,7 @@ strong {
 }
 
 .contact__div {
-  width: 80vw;
+  width: 70vw;
   padding: 10vw;
   font-size: calc(1vh + 1vw);
   color: white;
