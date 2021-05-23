@@ -55,6 +55,18 @@ renderer = new THREE.WebGLRenderer({
 });
 renderer.setSize(sizes.width, sizes.height);
 
+window.addEventListener( 'resize', onWindowResize );
+function onWindowResize() {
+    animationDivHeight = Math.floor(document.getElementsByClassName("background")[0].clientHeight);
+    animationDivWidth = Math.floor(document.getElementsByClassName("background")[0].clientWidth) - 1;
+    sizes.width = animationDivWidth;
+    sizes.height = animationDivHeight;
+    renderer.setSize(sizes.width, sizes.height);
+    camera = new THREE.OrthographicCamera( animationDivWidth / - 5, animationDivWidth / 5, animationDivHeight / 5, animationDivHeight / - 5, 0, 5000 );
+    camera.position.y = 2800;
+    camera.rotation.x = -0.75;
+}
+
 //clock
 const clock = new THREE.Clock(); //importing the clock in order to make the animations take as much time on any refresh rate screen 
 
