@@ -272,6 +272,7 @@ strong {
 
 .contact {
   width: 100%;
+  height: 100vh;
   top: 100%;
   background-color: #461661;
   position: absolute;
@@ -333,6 +334,15 @@ strong {
           flex-direction: row;
 }
 
+@media (orientation: portrait) {
+  .contact__details {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
 .contact__details > a > img {
   width: 3vw;
   padding: 1.5vw;
@@ -340,7 +350,7 @@ strong {
 
 @media (orientation: portrait) {
   .contact__details > a > img {
-    width: 8vw;
+    width: 12vw;
     padding: 3vw;
   }
 }
@@ -353,6 +363,7 @@ strong {
 @media (orientation: portrait) {
   .contact__div > svg {
     width: 10vw;
+    padding-top: 15vh;
   }
 }
 
