@@ -278,6 +278,15 @@ strong {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
 }
 
 .contact__h1 {
@@ -287,14 +296,27 @@ strong {
 }
 
 .contact__div {
-  width: 100%;
+  width: 80vw;
   padding: 10vw;
-  float: right;
   font-size: calc(1vh + 1vw);
   color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .contact__details {
+  width: 60vw;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -310,24 +332,24 @@ strong {
           flex-direction: row;
 }
 
-@media (orientation: portrait) {
-  .contact__details {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-  }
+.contact__details > a > img {
+  width: 3vw;
+  padding: 1.5vw;
 }
 
-.contact__details--mail {
-  padding-bottom: calc(2vh + 2vw);
-  line-height: calc(1vh + 1vw);
+.contact__div > svg {
+  width: 5vw;
+  fill: white;
+}
+
+.contact__details {
+  padding: calc(2vh + 2vw);
   font-size: calc(1vh + 1vw);
   color: white;
   font-family: "Poppins-Regular", sans-serif;
 }
 
-.contact__details--mail > a > h1 {
+.contact__details > a > h1 {
   font-size: calc(1.5vh + 1.5vw);
   color: white;
   font-family: "Poppins-Regular", sans-serif;

@@ -211,6 +211,9 @@ strong {
     background-color: $accent_color;
     position: absolute;
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
 }
 
 .contact__h1 {
@@ -220,32 +223,42 @@ strong {
 }
 
 .contact__div {
-    width: 100%;
+    width: 80vw;
     padding: 10vw;
-    float: right;
     font-size: calc(1vh + 1vw);
     color: $base_color;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }
 
 .contact__details {
+    width: 60vw;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: row;
-    @media (orientation: portrait) {
-        flex-direction: column;
-    }
 }
 
-.contact__details--mail {
-    padding-bottom: calc(2vh + 2vw);
-    line-height: calc(1vh + 1vw);
+.contact__details > a > img {
+    width: 3vw;
+    padding: 1.5vw;
+}
+
+.contact__div > svg {
+    width: 5vw;
+    fill: $base_color;
+}
+
+.contact__details {
+    padding: calc(2vh + 2vw);
     font-size: calc(1vh + 1vw);
     color: $base_color;
     font-family: "Poppins-Regular", sans-serif;
 }
 
-.contact__details--mail > a > h1 {
+.contact__details > a > h1 {
     font-size: calc(1.5vh + 1.5vw);
     color: $base_color;
     font-family: "Poppins-Regular", sans-serif;
