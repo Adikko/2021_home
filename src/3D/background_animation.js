@@ -1,3 +1,7 @@
+//defining variables globally
+let camera, scene, renderer;
+let mesh = null;
+
 //this portion of the code fetches the div width and height. It's necessary to get this data in order to render correct scene dimensions for the site (and the 3D scene) to be responsive
 //variables need to be defined globally, so the code can access the values assigned to them later on. They get the original div size assigned to them, because not everyone resizes their window (especially on mobile)
 let animationDivHeight = Math.floor(document.getElementsByClassName("background")[0].clientHeight);
@@ -7,14 +11,6 @@ const sizes = {
     width: animationDivWidth,
     height: animationDivHeight
 }
-
-//THREE.JS
-//THREE.JS
-//THREE.JS
-
-//defining variables globally
-let camera, scene, renderer;
-let mesh = null;
 
 //scene
 scene = new THREE.Scene();
