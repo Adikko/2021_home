@@ -172,6 +172,14 @@ a:link {
     align-content: center;
 }
 
+.projects__showcase > a:link {
+    text-decoration: none;
+}
+
+.projects__showcase > a:visited {
+    text-decoration: none;
+}
+
 .projects__showcase--figure {
     width: 15vw;
     @media (orientation: portrait) {

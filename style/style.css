@@ -226,6 +226,14 @@ a:link {
   }
 }
 
+.projects__showcase > a:link {
+  text-decoration: none;
+}
+
+.projects__showcase > a:visited {
+  text-decoration: none;
+}
+
 .projects__showcase--figure {
   width: 15vw;
   -webkit-transition: -webkit-transform 0.2s ease;
