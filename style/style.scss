@@ -56,6 +56,18 @@ strong {
     font-family: "Poppins-Regular", sans-serif;
 }
 
+a {
+    text-decoration: underline;
+}
+
+a:visited {
+    color: $accent_color;
+}
+
+a:link {
+    color: $accent_color;
+}
+
 .background {
     height: 100%;
     width: 100%;
@@ -161,7 +173,7 @@ strong {
 }
 
 .projects__showcase--figure {
-    width: 20vw;
+    width: 15vw;
     @media (orientation: portrait) {
         width: 70vw;
     }
@@ -194,7 +206,7 @@ strong {
     bottom: 10vh;
     font-family: "Poppins-Medium", sans-serif;
     color: $base_color;
-    font-size: calc(1vh + 1vw);
+    font-size: calc(0.7vh + 0.7vw);
     text-align: center;
     @media (orientation: portrait) {
         font-size: calc(1.2vh + 1.2vw);

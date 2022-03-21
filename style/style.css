@@ -53,6 +53,18 @@ strong {
   font-family: "Poppins-Regular", sans-serif;
 }
 
+a {
+  text-decoration: underline;
+}
+
+a:visited {
+  color: #461661;
+}
+
+a:link {
+  color: #461661;
+}
+
 .background {
   height: 100%;
   width: 100%;
@@ -215,7 +227,7 @@ strong {
 }
 
 .projects__showcase--figure {
-  width: 20vw;
+  width: 15vw;
   -webkit-transition: -webkit-transform 0.2s ease;
   transition: -webkit-transform 0.2s ease;
   transition: transform 0.2s ease;
@@ -260,7 +272,7 @@ strong {
   bottom: 10vh;
   font-family: "Poppins-Medium", sans-serif;
   color: white;
-  font-size: calc(1vh + 1vw);
+  font-size: calc(0.7vh + 0.7vw);
   text-align: center;
 }
 
